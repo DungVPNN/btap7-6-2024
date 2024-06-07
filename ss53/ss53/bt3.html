@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[1,2,3,4];
+        function processArray(a,b) {
+            setTimeout(()=>{
+                let result= [];
+                for(const item of a){
+                    result.push(b(a));
+                }
+            },1000)
+        }
+        processArray(arr, (item, index) => `phần thứ ${index + 1}`);
+    </script>
+</body>
+</html>

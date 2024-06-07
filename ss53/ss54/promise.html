@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let promise = new Promise((resolve,reject)=>{
+            //viet logic su ly code
+            //neu logic thanh cong thi goi resolve
+            //neu logic that bai goi reject
+            //ben trong phuong thuc .then co nhieu phuong thuc khac ket qa tra ve cua thang ban dau la tham so dau vao của then sau
+        })
+        .then((data)=>{
+            console.log("khi thanh cong trar ve du lieu",data)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+        let newPromise = new Promise ((resolve,reject)=>{
+            setTimeout(()=>{
+                console.log(1111)
+                resolve()
+            },1000)
+        })    
+        newPromise
+        .then(()=>{
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    console.log("2222");
+                    resolve()
+                },1000)
+            })
+        })
+    .then(()=>{
+        return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    console.log("3333");
+                    resolve()
+                },10000)  
+        })
+    }) 
+    .catch(()=>{
+        
+    })
+    </script>
+</body>
+</html>

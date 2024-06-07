@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Đồng bộ và bất đồng bộ
+        1. Đồng bộ : synchronous
+        - Ngôn ngữ javascript là 1 ngôn ngữ đơn luồng (single-thread: chỉ 1 luồng duy nhất,
+        luồng code chạy từ trái qua phải, từ trên xuống dưới)
+        2. bất đồng bộ : asynchronous
+        - những việc cần thời gian sử lý như các hàm settimeout, setInterval, readfile,
+        writefile, gửi request lên server, các thao tác datebase
+        Trong JS sinh ra các cách để xử lý các tác vụ bất đồng bộ
+        1. dùng callback
+            callback là gì?
+            là 1 hàm đc truyền vào làm đối số của hàm khác
+        2. promise
+        3. async-await
+    -->
+    <!-- <script>
+        //console.log("công việc 1");
+        //setTimeout(()=>{
+        //    console.log("công việc 2");
+        //},1000);
+        //console.log("công việc 3");
+
+    // các cách làm cho code chạy đúng quy tắc
+        // cách 1: 
+        function task1(a){
+            // công việc 1 cần 2s để thực thi
+            setTimeout(()=>{
+                console.log("công việc 1 được thực hiện");
+                a();
+            },2000)
+        };
+        function task2(){
+            console.log("công việc 2 được thực hiện sau khi công việc 1 hoàn thành")
+        };
+        // task1(task2);
+
+        // cách 2: 
+        setTimeout(()=>{
+            console.log("công việc 1");
+            setTimeout(()=>{
+                console.log("công việc 2 sau 1");
+                setTimeout(()=>{
+                    console.log("công việc 3 sau 2");
+                },1000)
+            },1000)
+        },1000)
+        // khi viết nhiều callback lồng nhau
+        // => thì sẽ rơi vào tình trạng callback hell(địa ngục): đại loại là nhìn bị loạn
+
+        let arr=[1,2,3,4,5];
+        //let result = arr.map((a)=>{
+        //    return a*2
+        //});
+        //console.log(result);
+
+        // dùng callback viết 1 hàm sử lý như hàm map
+        //function myMap(a,b){
+        //    let result=[];
+        //    for(const value of a){
+        //        result.push(b(value));
+        //    }
+        //    return result
+        //}
+        //myMap(arr,(item)=>item*2);
+
+
+        //let result=arr.filter((item)=>item>3);
+        // dùng callback viết 1 hàm sử lý như hàm filter
+        function myFilter(a,b){
+            let result=[];
+            for(const value of a){
+                if(b(value)){
+                    result.push(value);
+                }
+            }
+            return result;
+        }
+        console.log(myFilter(arr,(item)=>item>3));
+    </script> -->
+    <script src="./index.js"></script>
+</body>
+</html>

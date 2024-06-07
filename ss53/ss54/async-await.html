@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Async-await sinh ra ở phiên bản ES7 
+    giúp cho việc viết code bằng prosime trở nên gọn gàng hơn
+    <script>
+        async function asyncAwait(params){
+            new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                    console.log("1111");
+                },2000)
+            })
+            console.log("333")
+        }
+        console.log(asyncAwait());
+        function getData() {
+            fetch("");
+            
+        }
+    </script>
+</body>
+</html>

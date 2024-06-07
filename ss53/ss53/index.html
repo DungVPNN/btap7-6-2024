@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+  Đồng bộ và bất đồng bộ
+  1.đồng bộ : synchromous 
+  ngôn ngữ javascript là 1 ngôn ngữ đơn luồng chỉ 1 luồng duy nhất luồng code chạy từ trái qua phải từ trên xuống dưới 
+  dùng  callback: là một hàm được truyền vào làm đối số của hàm khác
+        prosime
+        async-await
+   -->
+</body>
+<script>
+  //console.log("cong viec 1")
+  //setTimeout(()=>{
+  //console.log("cong viec 4")
+  //},1000)
+  //console.log("cong viec 2")
+  //console.log("cong viec 3")
+  function task1() {
+    //can thoi gian xu li cong viec 1
+    // vi du cong viec 1 can 2s de thuc thi
+    setTimeout (()=>{
+      console.log("cong viec 1 da duoc thuc hien")
+    },2000);
+  }
+    function task2() {
+      console.log("duoc thuc hien sau khi tac 1 hoan thanh");
+    }
+    setTimeout(()=>{
+      console.log("cong viec 1 thuc thi");
+      setTimeout(()=>{
+        console.log("cong viec 2 thuc thi sau khi cong viec 1 hoan thanh");
+        setTimeout(()=>{
+          console.log("cong viec 3 thuc thi sau khi con viec 2 hoan hanh");
+        },7000)
+      },3000)
+    },1000)
+  let arr=[1,2,3,4,5];
+    function myMap(a,b) {
+      let result=[];
+      for (const item of a) {
+        result.push(b,item);
+      }
+      return result
+    }
+   console.log(myMap(arr,(item)=>item>5))
+    //ham filter
+</script>
+</html>
